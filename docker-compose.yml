@@ -221,7 +221,7 @@ services:
             - sogo
 
     dovecot-mailcow:
-      image: mailcow/dovecot:1.29
+      image: mailcow/dovecot:dev
       depends_on:
         - mysql-mailcow
         - netfilter-mailcow
@@ -259,6 +259,8 @@ services:
         - MAILDIR_GC_TIME=${MAILDIR_GC_TIME:-7200}
         - ACL_ANYONE=${ACL_ANYONE:-disallow}
         - SKIP_FLATCURVE=${SKIP_FLATCURVE:-y}
+        - FTS_HEAP=${FTS_HEAP:-512}
+        - FTS_PROCS=${FTS_PROCS:-3}
         - MAILDIR_SUB=${MAILDIR_SUB:-}
         - MASTER=${MASTER:-y}
         - REDIS_SLAVEOF_IP=${REDIS_SLAVEOF_IP:-}

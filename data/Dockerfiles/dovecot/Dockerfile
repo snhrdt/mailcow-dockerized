@@ -24,6 +24,7 @@ RUN addgroup -g 5000 vmail \
   envsubst \
   ca-certificates \
   curl \
+  coreutils \
   jq \
   lua \
   lua-cjson \
