@@ -25,7 +25,7 @@ for ip in "${ipstoping[@]}" ; do
             log_to_stdout "Healthcheck: Failed to ping $ip on attempt $i. Trying again..."
         fi
     done
-    
+
     if [ "$success" = false ]; then
         log_to_stdout "Healthcheck: Couldn't ping $ip after 3 attempts. Marking this IP as failed."
         ((failures++))
